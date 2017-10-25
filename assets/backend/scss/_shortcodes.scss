@@ -1,0 +1,27 @@
+.mifist_shortcode {
+  text-align: left;
+  border-left: 15px solid $d-green;
+  
+}
+.shortcode-line {
+  margin: 0 15px;
+  &:last-child {
+	border-bottom: none;
+  }
+  p {
+	margin-bottom: 0;
+	color: #000;
+	font-style: normal;
+	font-size: 1rem;
+  }
+  border-bottom: 1px solid $d-green;
+}
+.shortcode-title {
+  
+}
+.shortcode-description {
+  
+}
+.shortcode-content {
+  
+}

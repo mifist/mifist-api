@@ -1,0 +1,21 @@
+.mifist-guest-form {
+  background: $d-green;
+  padding: 20px;
+}
+.mifist-btn-add {
+  width: 200px;
+  height: 30px;
+  background: #fff;
+  color: $d-green;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid transparent;
+  @include ba-transition(color, boreder, background);
+  &:hover {
+	border: 2px solid #fff;
+	background: $d-green;
+	color: #fff;
+  }
+}
+// table

@@ -1,0 +1,75 @@
+#wpbody-content {
+  *, *::before, *::after {
+	box-sizing: inherit;
+  }
+  .row {
+	max-width: 112.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+  }
+  .row::before, .row::after {
+	content: ' ';
+	display: table;
+  }
+  
+  .row::after {
+	clear: both;
+  }
+  .column, .columns {
+	width: 100%;
+	float: left;
+	padding-left: 0.625rem;
+	padding-right: 0.625rem;
+  }
+  @media screen and (min-width: 40em) {
+	.column, .columns {
+	  padding-left: 0.9375rem;
+	  padding-right: 0.9375rem;
+	}
+  }
+  
+  .small-12 {
+	width: 100%;
+	padding: 0;
+  }
+  @media screen and (min-width: 40em) {
+	.medium-12 {
+	  width: 100%;
+	  padding: 0;
+	}
+  }
+  @media screen and (min-width: 64em) {
+	.large-6 {
+	  width: 47%;
+	}
+  }
+  
+  
+}
+#adminmenu #toplevel_page_mifist-slick-slider-plugin {
+  .wp-menu-image {
+	img {
+	  padding: 4px 0 0 !important;
+	  opacity: 1;
+	  max-width: 26px !important;
+	}
+  }
+}
+
+.row {
+  a {
+	//color: $d-green;
+	font-weight: bold;
+	text-decoration: none;
+	-webkit-transition: color .6s;
+	-moz-transition: color .6s;
+	-ms-transition: color .6s;
+	-o-transition: color .6s;
+	transition: color .6s;
+	&:hover {
+	  color: #000;
+	  text-decoration: underline;
+	}
+  }
+}

@@ -1,0 +1,18 @@
+$d-green: #62b3a2;
+$d-gray: #eae4e4;
+$body: #fdfdfd;
+$f-open: 'Open Sans Condensed', sans-serif;
+
+@mixin ba-transition ($property: 'color, border-color, background-color, opacity, transform', $duration: .2s, $timing-func:  ease-in) {
+  transition-timing-function: $timing-func;
+  transition-duration: $duration;
+  transition-property: #{$property};
+}
+// Guest book
+@import "global";
+// Shortcode style
+@import "shortcodes";
+// Main style
+@import "main";
+// Guest book
+@import "guest-book";
