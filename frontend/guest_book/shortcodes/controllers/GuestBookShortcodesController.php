@@ -1,14 +1,14 @@
 <?php
-namespace frontend\shortcodes\controllers;
+namespace frontend\guest_book\shortcodes\controllers;
 
 // Наследуем базовый класс MifistShortcodesController в котором реализованый некоторый функционал для создания
 // шорткода
 use frontend\shortcodes\MifistShortcodesController;
-use backend\menu\controllers\MifistICreatorInstance;
-use  backend\menu\models\MifistGuestBookSubMenuModel;
+use backend\menu\controllers\ICreatorInstance;
+use  backend\guest_book\menu\models\GuestBookModel;
 
-class MifistGuestBookShortcodesController extends MifistShortcodesController
-    implements MifistICreatorInstance {
+class GuestBookShortcodesController extends MifistShortcodesController
+    implements ICreatorInstance {
 
     /**
      * Функция в которой будем добалять шорткоды через функцию add_shortcode( $tag , $func );
@@ -74,16 +74,16 @@ class MifistGuestBookShortcodesController extends MifistShortcodesController
 		 */
 	    switch($action) {
 		    // Подгружаем view для добавление данных в таблицу
-		    // backend.php?page=mifist_control_guest_book_menu&action=add_data
+		    // backend.php?page=control_guest_book&action=add_data
 		    case "add_data":
-			    $pathView .= "/frontend/shortcodes/templates/MifistGuestBookShortcodesAdd.view.php";
+			    $pathView .= "/frontend/guest_book/shortcodes/templates/GuestBookShortcodesAdd.view.php";
 			    $this->loadView($pathView, 0, $data);
 			    break;
 		    // Сохранение данных в таблицу
-		    // backend.php?page=mifist_control_guest_book_menu&action=insert_data
+		    // backend.php?page=control_guest_book&action=insert_data
 		    case "insert_data":
 			    /*
-				 * Проверяем наличие данных от формы MifistGuestBookShortcodesAdd.view.php
+				 * Проверяем наличие данных от формы GuestBookShortcodesAdd.view.php
 				 */
 			    if (isset($_POST)){
 				    /*
@@ -92,7 +92,7 @@ class MifistGuestBookShortcodesController extends MifistShortcodesController
 					 * значение это значение которое будет вставлено определеному полю
 					 *
 					 */
-				    $id = MifistGuestBookSubMenuModel::insert(array(
+				    $id = GuestBookModel::insert(array(
 					    /*'user_category' =>  $_POST['user_category'],*/
 					    'user_name' => $_POST['user_name'],
 					    'age' => $_POST['age'],
@@ -103,7 +103,7 @@ class MifistGuestBookShortcodesController extends MifistShortcodesController
 				
 				    /*
 					 * После вставки возвращаемся на основную страницу гостевой книги
-					 * backend.php?page=mifist_control_guest_book_menu
+					 * backend.php?page=control_guest_book
 					 */
 				    $this->redirect(wp_get_shortlink() );
 			    }
@@ -111,28 +111,28 @@ class MifistGuestBookShortcodesController extends MifistShortcodesController
 			
 			    break;
 		    // Подгружаем view для редактирование данных в таблицу
-		    // backend.php?page=mifist_control_guest_book_menu&action=edit_data&id=ID записи
+		    // backend.php?page=control_guest_book&action=edit_data&id=ID записи
 		    case "edit_data":
 			    /*
 				 * Чтобы получить из таблицы запись которую редактировать мы используем $_GET['id'] параметр
 				 * Проверяем его наличие и на пустоту
 				*/
 			    if(isset($_GET['id']) && !empty($_GET['id'])){
-				    // Получаем данные записи в таблице по id затем эти данные передадим в view MifistGuestBookSubMenuEdit.view
-				    $data = MifistGuestBookSubMenuModel::getById((int)$_GET['id']);
-				    $pathView .= "/frontend/shortcodes/templates/MifistGuestBookShortcodesEdit.view.php";
+				    // Получаем данные записи в таблице по id затем эти данные передадим в view GuestBookShortcodesEdit.view
+				    $data = GuestBookModel::getById((int)$_GET['id']);
+				    $pathView .= "/frontend/guest_book/shortcodes/templates/GuestBookShortcodesEdit.view.php";
 				    $this->loadView($pathView, 0, $data);
 			    }
 			
 			    break;
 		    // Обновление редактированых данных в таблице
-		    // backend.php?page=mifist_control_guest_book_menu&action=update_data
+		    // backend.php?page=control_guest_book&action=update_data
 		    case "update_data":
-			    // Проверяем наличие $_POST данных от формы редактирования  MifistGuestBookShortcodesEdit.view.php
+			    // Проверяем наличие $_POST данных от формы редактирования  GuestBookShortcodesEdit.view.php
 			    //var_dump($_POST);
 			    if (isset($_POST)){
 				    // Если данные есть то обновляем их в базе данных по ID
-				    MifistGuestBookSubMenuModel::updateById(
+				    GuestBookModel::updateById(
 					    array(
 						    /*'user_category' =>  $_POST['user_category'],*/
 						    'user_name' => $_POST['user_name'],
@@ -146,23 +146,23 @@ class MifistGuestBookShortcodesController extends MifistShortcodesController
 			    }
 			    break;
 		    // Удаление данных
-		    // backend.php?page=mifist_control_guest_book_menu&action=delete_data&id=ID записи
+		    // backend.php?page=control_guest_book&action=delete_data&id=ID записи
 		    case "delete_data":
 			    // Чтобы удалить определеную запись в таблице мы используем $_GET['id'] параметр
 			    // Проверяем его наличие и на пустоту
 			    if(isset($_GET['id']) && !empty($_GET['id'])){
-				    MifistGuestBookSubMenuModel::deleteById((int)$_GET['id']);
+				    GuestBookModel::deleteById((int)$_GET['id']);
 			    }
 			   // $redirlink = echo wp_get_shortlink();
 			    $this->redirect( wp_get_shortlink() );
 			    break;
 		    // Основная страница Гостевой книги
-		    // backend.php?page=mifist_control_guest_book_menu
+		    // backend.php?page=control_guest_book
 		    default:
 			    //Получение всех записей в таблице чтобы отобразить их view
 			
-			    $data = MifistGuestBookSubMenuModel::getAll();
-			    $pathView .= "/frontend/shortcodes/templates/MifistGuestBookShortcodes.view.php";
+			    $data = GuestBookModel::getAll();
+			    $pathView .= "/frontend/guest_book/shortcodes/templates/GuestBookShortcodes.view.php";
 			    $this->loadView($pathView, 0, $data);
 	    }
 	    

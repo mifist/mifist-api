@@ -4,9 +4,9 @@ namespace frontend\shortcodes\models;
 
 use includes\common\MifistRequestApi;
 
-use backend\menu\controllers\MifistICreatorInstance;
+use backend\menu\controllers\ICreatorInstance;
 
-class MifistTextShortcodeModel implements MifistICreatorInstance {
+class MifistTextShortcodeModel implements ICreatorInstance {
 	public static function newInstance() {
 		// TODO: Implement newInstance() method.
 		$instance = new self;

@@ -2,7 +2,7 @@
 namespace backend\menu\controllers;
 use includes\common\NewInstance;
 
-class MifistMainAdminMenuController extends MifistBaseAdminMenuController {
+class MainAdminMenuController extends BaseAdminMenuController {
 
     public function action()
     {
@@ -13,20 +13,20 @@ class MifistMainAdminMenuController extends MifistBaseAdminMenuController {
          */
         $pluginPage = add_menu_page(
             _x(
-                'Mifist Slick Slider',
+                'Mifist Plugin',
                 'backend menu page' ,
                 MIFISTAPI_PlUGIN_TEXTDOMAIN
             ),
             _x(
-                'Mifist Slick Slider',
+                'Mifist Plugin',
                 'backend menu page' ,
                 MIFISTAPI_PlUGIN_TEXTDOMAIN
             ),
             'manage_options',
 	        MIFISTAPI_PlUGIN_TEXTDOMAIN,
 	         array(&$this,'render'),
-            MIFISTAPI_PlUGIN_URL .'assets/backend/images/picture.svg',
-	        9 // $position перед Медиа
+            MIFISTAPI_PlUGIN_URL .'assets/backend/images/api.png',
+	        10 // $position перед Медиа
         );
     }
 
@@ -35,7 +35,7 @@ class MifistMainAdminMenuController extends MifistBaseAdminMenuController {
      */
     public function render() {
     	// TODO: Implement render() method.
-	    $pathView = MIFISTAPI_PlUGIN_DIR . '/backend/menu/templates/MifistMainAdminMenu.view.php';
+	    $pathView = MIFISTAPI_PlUGIN_DIR . '/backend/menu/templates/MainAdminMenu.view.php';
 	    $this->loadView($pathView);
 	}
 

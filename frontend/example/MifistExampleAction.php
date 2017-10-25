@@ -1,6 +1,6 @@
 <?php
 
-namespace includes\example;
+namespace frontend\example;
 
 use includes\common\NewInstance;
 

@@ -2,7 +2,7 @@
 namespace backend\menu\controllers;
 use includes\common\NewInstance;
 
-class MifistMainAdminSubMenuController extends MifistBaseAdminMenuController
+class MifistMainAdminSubMenuController extends BaseAdminMenuController
 {
 
     public function action()

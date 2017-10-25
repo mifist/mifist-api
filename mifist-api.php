@@ -3,7 +3,7 @@
 /*
 Plugin Name: Mifist API
 Plugin URI:  http://www.daria-moskalets.in.ua/learn-api/
-Description: Free Learn APIr plugin for WordPress.
+Description: Test different API`s and other for WordPress.
 Version: 1.0
 Author: Moskalets Daria
 Author URI: http://www.daria-moskalets.in.ua/
@@ -33,7 +33,7 @@ require_once MIFISTAPI_PlUGIN_DIR . '/includes/MifistApiPlugin.php';
 
 
 //Регистрация виджета
-add_action('widgets_init', create_function('', 'return register_widget("backend\widgets\MifistGuestBookWidget");'));
+add_action('widgets_init', create_function('', 'return register_widget("backend\guest_book\widgets\GuestBookWidget");'));
 
 // вызов функций активации и деактивации плагина
 register_activation_hook( __FILE__, array('includes\MifistApiPlugin' ,  'activation' ) );

@@ -1,9 +1,9 @@
 <?php
-namespace  backend\widgets;
+namespace  backend\guest_book\widgets;
 
-use  backend\menu\models\MifistGuestBookSubMenuModel;
+use  backend\guest_book\menu\models\GuestBookModel;
 
-class MifistGuestBookWidget extends \WP_Widget
+class GuestBookWidget extends \WP_Widget
 {
     public function __construct() {
 
@@ -21,7 +21,7 @@ class MifistGuestBookWidget extends \WP_Widget
 
         parent::__construct(
             "mifist_guest_book",
-            "Mifist Guest Book Widget",
+            "Guest Book Widget",
             array("description" => "Guest book")
         );
     }
@@ -77,7 +77,7 @@ class MifistGuestBookWidget extends \WP_Widget
         echo "<p>$text</p>";
 
         // Вывод таблички гостевой книги
-        $data = MifistGuestBookSubMenuModel::getAll();
+        $data = GuestBookModel::getAll();
         ?>
 	    <table class="shortcode-table " border="1">
 		    <thead>

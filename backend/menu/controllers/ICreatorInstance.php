@@ -2,7 +2,7 @@
 namespace backend\menu\controllers;
 
 
-interface MifistICreatorInstance
+interface ICreatorInstance
 {
     public static function newInstance();
 }

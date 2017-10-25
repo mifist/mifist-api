@@ -1,10 +1,10 @@
 <?php
-namespace frontend\ajax;
+namespace frontend\guest_book\ajax;
 
-use backend\menu\controllers\MifistICreatorInstance;
-use backend\menu\models\MifistGuestBookSubMenuModel;
+use backend\menu\controllers\ICreatorInstance;
+use backend\guest_book\menu\models\GuestBookModel;
 
-class MifistGuestBookAjaxHandler implements MifistICreatorInstance {
+class GuestBookAjaxHandler implements ICreatorInstance {
     public function __construct(){
         if( defined('DOING_AJAX') && DOING_AJAX ){
             add_action('wp_ajax_guest_book', array( &$this, 'ajaxHandler'));
@@ -22,7 +22,7 @@ class MifistGuestBookAjaxHandler implements MifistICreatorInstance {
         // Проверка наличия данных
         if ($_POST){
             //Добавляем данные
-            $id = MifistGuestBookSubMenuModel::insert(array(
+            $id = GuestBookModel::insert(array(
 	            'user_name' => $_POST['user_name'],
 	            'age' => $_POST['age'],
 	            'user_mail' => $_POST['user_mail'],

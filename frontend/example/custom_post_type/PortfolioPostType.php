@@ -5,7 +5,7 @@
  * Date: 28.02.17
  * Time: 21:18
  */
-namespace includes\custom_post_type;
+namespace frontend\custom_post_type;
 
 class PortfolioPostType {
 	

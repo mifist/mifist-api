@@ -2,9 +2,9 @@
 namespace  backend\menu\models;
 
 use includes\common\NewInstance;
-use backend\menu\controllers\MifistICreatorInstance;
+use backend\menu\controllers\ICreatorInstance;
 
-class MifistMainAdminOptionsMenuModel implements MifistICreatorInstance {
+class MainAdminOptionsModel implements ICreatorInstance {
 
     public function __construct(){
         add_action( 'admin_init', array( &$this, 'createOption' ) );

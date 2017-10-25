@@ -5,8 +5,8 @@ jQuery(function($) {
 	$(document).ready(function(){
 		
 	});
-	// Отслежываем нажатие  на кнопку Add (<button class="mifist-ajax-btn-add" >'.__('Add', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</button> )
-	$(document).find('.mifist-ajax-btn-add').click(function (e) {
+	// Отслежываем нажатие  на кнопку Add (<button class="guest-book-ajax-btn-add" >'.__('Add', MIFISTSLICK_PlUGIN_TEXTDOMAIN ).'</button> )
+	$(document).find('.guest-book-ajax-btn-add').click(function (e) {
 		var userName, userAge, userMail, userMessage, data;
 		// Получаем данные формы
 		userName = $(this).parent().find('.mifist-user-name').val();
@@ -26,7 +26,7 @@ jQuery(function($) {
 		//console.log(ajaxurl+ '?action=guest_book');
 		
 		// Отправка данных ajax обработчику (wp_ajax_guest_book, wp_ajax_nopriv_guest_book)
-		$.post( mifist_slick_slider_plugin_ajax.ajaxurl, data, function(response) {
+		$.post( mifist_guest_book_plugin_ajax.ajaxurl, data, function(response) {
 			alert('Получено с сервера: ' + response.data.message);
 			console.log(response);
 		});

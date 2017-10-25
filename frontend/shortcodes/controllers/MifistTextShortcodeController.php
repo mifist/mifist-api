@@ -2,13 +2,12 @@
 namespace frontend\shortcodes\controllers;
 
 
-use includes\common\MifistRequestApi;
-use backend\menu\controllers\MifistICreatorInstance;
+use backend\menu\controllers\ICreatorInstance;
 use frontend\shortcodes\models\MifistTextShortcodeModel;
 use frontend\shortcodes\MifistShortcodesController;
 
 class MifistTextShortcodeController extends MifistShortcodesController
-	implements MifistICreatorInstance {
+	implements ICreatorInstance {
 	
 	public $model;
 	public function __construct() {

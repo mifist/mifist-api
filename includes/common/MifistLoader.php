@@ -6,18 +6,18 @@ namespace includes\common;
 use frontend\shortcodes\controllers\MifistTextShortcodeController;
 use frontend\shortcodes\controllers\MifistShortcode;
 // custom  menu
-use backend\menu\controllers\MifistMainAdminMenuController;
+use backend\menu\controllers\MainAdminMenuController;
 //options menu
-use backend\menu\controllers\MifistMainAdminOptionsMenuController;
+use backend\menu\controllers\MainAdminOptionsController;
 // guest book menu
-use backend\menu\controllers\MifistGuestBookSubMenuController;
+use backend\guest_book\menu\controllers\GuestBookController;
 // GUEST BOOK
-use frontend\shortcodes\controllers\MifistGuestBookShortcodesController;
-use frontend\shortcodes\controllers\MifistGuestBookAjaxShortcodesController;
+use frontend\guest_book\shortcodes\controllers\GuestBookShortcodesController;
+use frontend\guest_book\shortcodes\controllers\GuestBookAjaxShortcodesController;
 // Widget
-use backend\widgets\MifistGuestBookDashboardWidget;
+use backend\guest_book\widgets\GuestBookDashboardWidget;
 // Ajax
-use frontend\ajax\MifistGuestBookAjaxHandler;
+use frontend\guest_book\ajax\GuestBookAjaxHandler;
 
 // custom backend menu
 use  backend\menu\controllers\MifistMyDashboardMenuController;
@@ -25,8 +25,8 @@ use  backend\menu\controllers\MifistMyOptionsMenuController;
 use  backend\menu\controllers\MifistMyPagesMenuController;
 
 // example
-use includes\example\MifistExampleAction;
-use includes\example\MifistExampleFilter;
+use frontend\example\MifistExampleAction;
+use frontend\example\MifistExampleFilter;
 
 class MifistLoader {
 	use GetInstance;
@@ -49,12 +49,12 @@ class MifistLoader {
      */
     public function admin(){
     	// MENU
-	    MifistMainAdminMenuController::newInstance();
-	    MifistMainAdminOptionsMenuController::newInstance();
+	    MainAdminMenuController::newInstance();
+	    MainAdminOptionsController::newInstance();
 	    // menu for guest book
-	    MifistGuestBookSubMenuController::newInstance();
+	    GuestBookController::newInstance();
 	    // Подключаем виджет гостевой книги
-	    MifistGuestBookDashboardWidget::newInstance();
+	    GuestBookDashboardWidget::newInstance();
 	    
 	    // custom backend menu
 //	    MifistMyDashboardMenuController::newInstance();
@@ -69,8 +69,8 @@ class MifistLoader {
     public function site(){
 	    MifistTextShortcodeController::newInstance();
 	    // Шорткод для формы гостевой книги
-	    MifistGuestBookShortcodesController::newInstance();
-	    MifistGuestBookAjaxShortcodesController::newInstance();
+	    GuestBookShortcodesController::newInstance();
+	    GuestBookAjaxShortcodesController::newInstance();
     }
 
     /**
@@ -81,8 +81,8 @@ class MifistLoader {
 	    MifistShortcode::getInstance();
 	    MifistLocalization::getInstance();
 	    MifistLoaderScript::getInstance();
-	    // подключаем ajax обработчик
-	    MifistGuestBookAjaxHandler::newInstance();
+	    // подключаем ajax обработчик для Guest Book
+	    GuestBookAjaxHandler::newInstance();
 	    
 	    
 	    

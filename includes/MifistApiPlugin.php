@@ -7,7 +7,7 @@ use includes\common\MifistDefaultOption;
 use includes\common\MifistLoader;
 use includes\common\GetInstance;
 
-use backend\menu\models\MifistGuestBookSubMenuModel;
+use backend\guest_book\menu\models\GuestBookModel;
 
 class MifistApiPlugin {
 	use GetInstance;
@@ -36,7 +36,7 @@ class MifistApiPlugin {
 	    // debug.log
 	    error_log('plugin '.MIFISTAPI_PlUGIN_NAME.' activation');
 	    //Создание таблицы Гостевой книги
-	    MifistGuestBookSubMenuModel::createTable();
+	    GuestBookModel::createTable();
 	    
 	    
     }
@@ -47,7 +47,7 @@ class MifistApiPlugin {
         error_log('plugin '.MIFISTAPI_PlUGIN_NAME.' deactivation');
 	    delete_option(MIFISTAPI_PlUGIN_OPTION_NAME);
 	    delete_option(MIFISTAPI_PlUGIN_OPTION_VERSION);
-	    MifistGuestBookSubMenuModel::deleteTable();
+	    GuestBookModel::deleteTable();
 	    error_log('plugin '.MIFISTAPI_PlUGIN_NAME.' delete Table');
     }
 

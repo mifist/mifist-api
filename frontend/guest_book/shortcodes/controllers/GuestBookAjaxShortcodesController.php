@@ -1,13 +1,13 @@
 <?php
-namespace frontend\shortcodes\controllers;
+namespace frontend\guest_book\shortcodes\controllers;
 
 // Наследуем базовый класс MifistShortcodesController в котором реализованый некоторый функционал для создания
 // шорткода
-use backend\menu\controllers\MifistICreatorInstance;
+use backend\menu\controllers\ICreatorInstance;
 use frontend\shortcodes\MifistShortcodesController;
 
-class MifistGuestBookAjaxShortcodesController extends MifistShortcodesController
-    implements MifistICreatorInstance
+class GuestBookAjaxShortcodesController extends MifistShortcodesController
+    implements ICreatorInstance
 {
 
     /**
@@ -18,10 +18,10 @@ class MifistGuestBookAjaxShortcodesController extends MifistShortcodesController
     {
         // TODO: Implement initShortcode() method.
         /*
-         * Добавляем щорткод [mifist_guest_book]
+         * Добавляем щорткод [ajax_guest_book]
          * этот шорткод будет добалять форму для добавления данных в гостевую книгу
          */
-        add_shortcode( 'mifist_guest_book', array(&$this, 'action'));
+        add_shortcode( 'ajax_guest_book', array(&$this, 'action'));
     }
 
     /**
@@ -69,7 +69,7 @@ class MifistGuestBookAjaxShortcodesController extends MifistShortcodesController
 					    <input type="text" name="mifist_user_mail" class="mifist-user-mail">
 					    <label>'.__('Message',MIFISTAPI_PlUGIN_TEXTDOMAIN ).'</label>
 					    <textarea name="mifist_message" class="mifist-message"></textarea>
-					    <button class="mifist-ajax-btn-add" >'.__('Add',MIFISTAPI_PlUGIN_TEXTDOMAIN ).'</button>                   
+					    <button class="guest-book-ajax-btn-add" >'.__('Add',MIFISTAPI_PlUGIN_TEXTDOMAIN ).'</button>                   
 					</form>';
 	    return $output;
     }

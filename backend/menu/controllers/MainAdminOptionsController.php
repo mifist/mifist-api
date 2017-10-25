@@ -1,14 +1,14 @@
 <?php
 namespace backend\menu\controllers;
 use includes\common\NewInstance;
-use backend\menu\models\MifistMainAdminOptionsMenuModel;
+use backend\menu\models\MainAdminOptionsModel;
 
-class MifistMainAdminOptionsMenuController extends MifistBaseAdminMenuController {
+class MainAdminOptionsController extends BaseAdminMenuController {
 	use NewInstance;
 	public $model;
 	public function __construct(){
 		parent::__construct();
-		$this->model = MifistMainAdminOptionsMenuModel::newInstance();
+		$this->model = MainAdminOptionsModel::newInstance();
 	}
 
     public function action()
@@ -17,23 +17,23 @@ class MifistMainAdminOptionsMenuController extends MifistBaseAdminMenuController
         $pluginPage = add_submenu_page(
 	        MIFISTAPI_PlUGIN_TEXTDOMAIN,
             _x(
-                'Slick Options',
+                'Plugin Options',
                 'backend menu page' ,
                 MIFISTAPI_PlUGIN_TEXTDOMAIN
             ),
             _x(
-                'Slick Options',
+                'Plugin Options',
                 'backend menu page' ,
                 MIFISTAPI_PlUGIN_TEXTDOMAIN
             ),
             'manage_options',
-            'mifist_control_options_menu',
+            'mifist_control_options',
             array(&$this, 'render'));
     }
 
     public function render() {
         // TODO: Implement render() method.
-	    $pathView = MIFISTAPI_PlUGIN_DIR . '/backend/menu/templates/MifistMainAdminOptionsMenu.view.php';
+	    $pathView = MIFISTAPI_PlUGIN_DIR . '/backend/menu/templates/MainAdminOptions.view.php';
 	    $this->loadView($pathView);
     }
 	

@@ -1,0 +1,100 @@
+#wpbody-content *, #wpbody-content *::before, #wpbody-content *::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+#wpbody-content .row {
+  max-width: 112.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+#wpbody-content .row::before, #wpbody-content .row::after {
+  content: ' ';
+  display: table; }
+
+#wpbody-content .row::after {
+  clear: both; }
+
+#wpbody-content .column, #wpbody-content .columns {
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
+
+@media screen and (min-width: 40em) {
+  #wpbody-content .column, #wpbody-content .columns {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem; } }
+
+#wpbody-content .small-12 {
+  width: 100%;
+  padding: 0; }
+
+@media screen and (min-width: 40em) {
+  #wpbody-content .medium-12 {
+    width: 100%;
+    padding: 0; } }
+
+@media screen and (min-width: 64em) {
+  #wpbody-content .large-6 {
+    width: 47%; } }
+
+#adminmenu #toplevel_page_mifist-slick-slider-plugin .wp-menu-image img {
+  padding: 4px 0 0 !important;
+  opacity: 1;
+  max-width: 26px !important; }
+
+.row a {
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-transition: color .6s;
+  -moz-transition: color .6s;
+  -ms-transition: color .6s;
+  -o-transition: color .6s;
+  transition: color .6s; }
+  .row a:hover {
+    color: #000;
+    text-decoration: underline; }
+
+.mifist_shortcode {
+  text-align: left;
+  border-left: 15px solid #fff;
+  padding-left: 15px !important; }
+
+.shortcode-line {
+  margin: 0 15px;
+  border-bottom: 1px solid #fff; }
+  .shortcode-line:last-child {
+    border-bottom: none; }
+  .shortcode-line p {
+    margin-bottom: 0;
+    color: #000;
+    font-style: normal;
+    font-size: 1rem; }
+
+.mifist-guest-form {
+  background: #62b3a2;
+  padding: 20px; }
+
+.mifist-btn-add {
+  width: 200px;
+  height: 30px;
+  background: #fff;
+  color: #62b3a2;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid transparent;
+  -webkit-transition-timing-function: background;
+  -o-transition-timing-function: background;
+  transition-timing-function: background;
+  -webkit-transition-duration: boreder;
+  -o-transition-duration: boreder;
+  transition-duration: boreder;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color; }
+  .mifist-btn-add:hover {
+    border: 2px solid #fff;
+    background: #62b3a2;
+    color: #fff; }

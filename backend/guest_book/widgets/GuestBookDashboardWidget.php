@@ -1,11 +1,11 @@
 <?php
-namespace backend\widgets;
+namespace backend\guest_book\widgets;
 
 
-use backend\menu\controllers\MifistICreatorInstance;
-use backend\menu\models\MifistGuestBookSubMenuModel;
+use backend\menu\controllers\ICreatorInstance;
+use backend\guest_book\menu\models\GuestBookModel;
 
-class MifistGuestBookDashboardWidget implements MifistICreatorInstance
+class GuestBookDashboardWidget implements ICreatorInstance
 {
     public function __construct() {
         // Регистрация виджета консоли
@@ -64,7 +64,7 @@ class MifistGuestBookDashboardWidget implements MifistICreatorInstance
     // Выводит контент
     public function renderDashboardWidget(){
         // Запрашиваем данные из таблицы
-        $data = MifistGuestBookSubMenuModel::getAll();
+        $data = GuestBookModel::getAll();
         // Вывод данных
         ?>
 	    <table class="shortcode-table " border="1">

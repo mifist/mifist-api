@@ -6,6 +6,16 @@
 	margin: 0;
   }
 }
+#adminmenu li#toplevel_page_mifist-api {
+	div.wp-menu-image {
+		img {
+			width: 25px;
+			height: 25px;
+			padding: 5px 0 0;
+		}
+	}
+}
+
 .features {
   padding-left: 25px;
   li {

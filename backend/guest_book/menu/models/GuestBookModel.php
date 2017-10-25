@@ -1,11 +1,11 @@
 <?php
-namespace backend\menu\models;
+namespace backend\guest_book\menu\models;
 
 
-class MifistGuestBookSubMenuModel
+class GuestBookModel
 {
 	//Название таблицы
-	const MIFISTAPI_TABLE_NAME = "mifist_api_test";
+	const MIFIST_GUEST_BOOK_TABLE_NAME = "mifist_guest_book";
 	
 	/**
 	 * Возвращает название таблицы с префиксом WordPress тот что задаеться при установке
@@ -14,7 +14,7 @@ class MifistGuestBookSubMenuModel
 	 */
 	static public function getTableName(){
 		global $wpdb;
-		return $wpdb->prefix .static::MIFISTAPI_TABLE_NAME;
+		return $wpdb->prefix .static::MIFIST_GUEST_BOOK_TABLE_NAME;
 	}
 	
 	/**
@@ -24,12 +24,12 @@ class MifistGuestBookSubMenuModel
 	{
 		global $wpdb;
 		$tableName = self::getTableName();
-		$sql = "CREATE TABLE " .$tableName. "(
+		$sql = "CREATE TABLE " . $tableName . "(
                               id int(11) NOT NULL AUTO_INCREMENT,
                               /*user_category ENUM('дом', 'работа', 'учеба', 'тест', 'проходили мимо') NOT NULL,*/
                               date_add int(11) NOT NULL,
                               user_name varchar(150) NOT NULL,
-                              age SMALLINT(6) NOT NULL,
+                              age TINYINT(2) TINYINT NOT NULL,
                               user_mail varchar(150) NOT NULL,
                               message text NOT NULL,
                             /*  UNIQUE('user_mail'),*/
