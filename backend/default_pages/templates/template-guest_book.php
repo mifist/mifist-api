@@ -12,7 +12,7 @@ get_header(); ?>
 			
 			<div class="small-12 medium-12 large-4 columns item ">
 				<div class="item__greeting item--transparent">
-					<h1><?php the_title(); ?> - Guest book</h1>
+					<h1><?php the_title(); ?> - Guest book from plugin</h1>
 				</div>
 			</div>
 			<div class="small-12 medium-12 large-8 columns item ">

@@ -15,17 +15,17 @@ class BackPagesModel implements ICreatorInstance {
 			'page_ajax' => [
 				'post_title'    => __('Learn Ajax'),
 				'post_content'  => '',
-				'page_template' => 'templates/template-ajax.php'
+				'page_template' => 'template-ajax.php'
 			],
 			'page_api' => [
 				'post_title'    => __('Learn API'),
 				'post_content'  => '',
-				'page_template' => 'templates/template-api.php'
+				'page_template' => 'template-api.php'
 			],
 			'guest_book' => [
 				'post_title'    => __('Guest Book'),
 				'post_content'  => '',
-				'page_template' =>  'templates/template-guest_book.php'
+				'page_template' =>  'template-guest_book.php'
 			]
 		];
 		return $default_pages;
@@ -58,13 +58,10 @@ class BackPagesModel implements ICreatorInstance {
 				
 				error_log($page_id.' insert');
 				
-				
-				
 				update_post_meta($page_id, '_wp_page_template', $default_page['page_template']);
 				
-				
 				// SUB PAGES
-				if (array_key_exists('sub_pages', $default_page) == true){
+				/*if (array_key_exists('sub_pages', $default_page) == true){
 					foreach ($default_page['sub_pages'] as $sub_page){
 						$sub_page_id =  wp_insert_post([
 							'post_type'    => 'page',
@@ -76,7 +73,7 @@ class BackPagesModel implements ICreatorInstance {
 						]);
 						update_post_meta($sub_page_id, '_wp_page_template', $sub_page['page_template']);
 					}
-				}
+				}*/
 				
 			}
 		}
@@ -86,88 +83,7 @@ class BackPagesModel implements ICreatorInstance {
 		
 	}
 	
-	/**
-	 * Adds our template to the pages cache in order to trick WordPress
-	 * into thinking the template file exists where it doens't really exist.
-	 */
-	static public function registerPagesTemplates( ) {
-		$templatess = self::getTemplates();
-		// Create the key used for the themes cache
-		$cache_key = 'page_templates-' . md5( get_theme_root() . '/' . get_stylesheet() );
-		
-		// Retrieve the cache list.
-		// If it doesn't exist, or it's empty prepare an array
-		$templates = wp_get_theme()->get_page_templates();
-		if ( empty( $templates ) ) {
-			$templates = array();
-		}
-		
-		// New cache, therefore remove the old one
-		wp_cache_delete( $cache_key , 'themes');
-		
-		// Now add our template to the list of templates by merging our templates
-		// with the existing templates array from the cache.
-		$templates = array_merge( $templates, $templates->default_page['page_template'] );
-		
-		// Add the modified cache to allow WordPress to pick it up for listing
-		// available templates
-		wp_cache_add( $cache_key, $templates, 'themes', 1800 );
-		
-		return $templates;
-		
-	}
 	
-	/**
-	 * Adds our template to the page dropdown for v4.7+
-	 *
-	 */
-	static public function addNewTemplate(  ) {
-		$templates = self::getTemplates();
-		
-		// TODO: Implement add_new_template() method.
-		
-			$posts_templates = array_merge( self::$posts_templates, $templates );
-		
-		return $posts_templates;
-	}
-	
-	
-	/**
-	 * Checks if the template is assigned to the page
-	 */
-	static public function viewPagesTemplates( ) {
-		
-		$templates = self::getTemplates();
-		
-		foreach ($templates as $default_page){
-			$page_title =  get_page_by_title($default_page['post_title']);
-			// Return template if post is empty
-			if ( ! $page_title ) {
-				return $templates;
-			}
-			
-			// Return default template if we don't have a custom one defined
-			if ( ! isset($templates[get_post_meta(
-					$page_title->ID, '_wp_page_template', true
-				)] ) ) {
-				return $templates;
-			}
-			
-			$file = MIFISTAPI_PlUGIN_DIR . get_post_meta( $page_title->ID, '_wp_page_template', true );
-			
-			// Just to be safe, we check if the file exist first
-			if ( file_exists( $file ) ) {
-				return $file;
-			} else {
-				echo $file;
-			}
-		}
-		
-		
-		// Return template
-		return $templates;
-		
-	}
 	static public function deleteDefaultPageOption() {
 		$templates = self::getTemplates();
 		foreach ($templates as $default_page){

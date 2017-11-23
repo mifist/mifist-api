@@ -7,6 +7,8 @@ use frontend\shortcodes\controllers\MifistTextShortcodeController;
 use frontend\shortcodes\controllers\MifistShortcode;
 // custom  menu
 use backend\menu\controllers\MainAdminMenuController;
+// Custom page templates
+use backend\default_pages\controllers\BackTemplatesController;
 //options menu
 use backend\options\controllers\BackOptionsController;
 // guest book menu
@@ -84,6 +86,9 @@ class MifistLoader {
 	    MifistLoaderScript::getInstance();
 	    // подключаем ajax обработчик для Guest Book
 	    GuestBookAjaxHandler::newInstance();
+	    
+	    // include default Templates for plugin pages
+	    BackTemplatesController::newInstance();
 	    
 	    
 	    
