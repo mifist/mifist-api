@@ -24,12 +24,12 @@ class GuestBookModel
 	{
 		global $wpdb;
 		$tableName = self::getTableName();
-		$sql = "CREATE TABLE " . $tableName . "(
+		$sql = "CREATE TABLE ".$tableName."(
                               id int(11) NOT NULL AUTO_INCREMENT,
                               /*user_category ENUM('дом', 'работа', 'учеба', 'тест', 'проходили мимо') NOT NULL,*/
                               date_add int(11) NOT NULL,
                               user_name varchar(150) NOT NULL,
-                              age TINYINT(2) TINYINT NOT NULL,
+                              age TINYINT(2) NOT NULL,
                               user_mail varchar(150) NOT NULL,
                               message text NOT NULL,
                             /*  UNIQUE('user_mail'),*/

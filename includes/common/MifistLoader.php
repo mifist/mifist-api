@@ -8,7 +8,7 @@ use frontend\shortcodes\controllers\MifistShortcode;
 // custom  menu
 use backend\menu\controllers\MainAdminMenuController;
 //options menu
-use backend\menu\controllers\MainAdminOptionsController;
+use backend\options\controllers\BackOptionsController;
 // guest book menu
 use backend\guest_book\menu\controllers\GuestBookController;
 // GUEST BOOK
@@ -37,7 +37,7 @@ class MifistLoader {
         // другая страница админки).
         // Проверяем в админке мы или нет
         if ( is_admin() ) {
-            $this->admin(); // Когда в админке вызываем метод backend()
+            $this->admin(); // Когда в админке вызываем метод backensd()
         } else {
             $this->site(); // Когда на сайте вызываем метод site()
         }
@@ -50,9 +50,10 @@ class MifistLoader {
     public function admin(){
     	// MENU
 	    MainAdminMenuController::newInstance();
-	    MainAdminOptionsController::newInstance();
+	    BackOptionsController::newInstance();
 	    // menu for guest book
 	    GuestBookController::newInstance();
+	   
 	    // Подключаем виджет гостевой книги
 	    GuestBookDashboardWidget::newInstance();
 	    

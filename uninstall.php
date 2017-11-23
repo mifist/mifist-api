@@ -3,6 +3,7 @@
 // Если к файлу обращаются напрямую, закроем доступ
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ){
 	exit();
+	
 } else {
 	// debug.log
 	error_log('Guest Book table of plugin '.MIFISTAPI_PlUGIN_NAME.' has been removed');

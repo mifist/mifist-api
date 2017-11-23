@@ -10,11 +10,11 @@
     <?php
     // скрытые защитные поля
     // register_setting -> $option_group
-        settings_fields( 'MainSettings' );
+        settings_fields( 'MainOptions' );
     // секции с настройками (опциями).
     // У нас она всего одна 'section_id'
     //  add_settings_section -> $page (id)
-        do_settings_sections( 'mifist-api-plugin' );
+        do_settings_sections( 'mifist_control_options' );
     // Дефолтная кнопка WordPress, сохранить
         submit_button();
     ?>

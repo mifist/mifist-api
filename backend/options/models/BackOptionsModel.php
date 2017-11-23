@@ -1,14 +1,14 @@
 <?php
-namespace  backend\menu\models;
+namespace  backend\options\models;
 
 use includes\common\NewInstance;
 use backend\menu\controllers\ICreatorInstance;
 
-class MainAdminOptionsModel implements ICreatorInstance {
+class BackOptionsModel implements ICreatorInstance {
 
     public function __construct(){
         add_action( 'admin_init', array( &$this, 'createOption' ) );
-       // error_log(1);
+        //error_log(1);
     }
 
     /**
@@ -22,40 +22,40 @@ class MainAdminOptionsModel implements ICreatorInstance {
         // register_setting( $option_group, $option_name, $sanitize_callback );
         // Регистрирует новую опцию
         register_setting (
-            'MifistMainSettings',           // $option_group
+            'MainOptions',           // $option_group
 	        MIFISTAPI_PlUGIN_OPTION_NAME, // $option_name
 	        array(&$this, 'saveOption')     // $sanitize_callback
         );
         // add_settings_section( $id, $title, $callback, $page );
         // Добавление секции опций
         add_settings_section (
-            'mifist_slick_starter_id',                                          // $id
+            'mifist_option_starter_id',                                          // $id
 	        __('Стартовые настройки слайдера', MIFISTAPI_PlUGIN_TEXTDOMAIN),  // $title
 	        '',                                                                 // $callback
-	        'mifist-slick-plugin'                                               // $page (id)
+	        'mifist_control_options'                                               // $page (id)
         );
         // add_settings_field( $id, $title, $callback, $page, $section, $args );
         // Добавление полей опций
         add_settings_field (
-            'mifist_slick_token_field_id',              // $id
+            'mifist_option_token_field_id',              // $id
             __('Token', MIFISTAPI_PlUGIN_TEXTDOMAIN), // $title
             array(&$this, 'tokenField'),                // $callback
-            'mifist-slick-plugin',                      // $page ->  add_settings_section
-            'mifist_slick_starter_id'                   // $section ->  add_settings_section
+            'mifist_control_options',                      // $page ->  add_settings_section
+            'mifist_option_starter_id'                   // $section ->  add_settings_section
         );
         add_settings_field (
-            'mifist_slick_marker_field_id',              // $id
+            'mifist_option_marker_field_id',              // $id
             __('Marker', MIFISTAPI_PlUGIN_TEXTDOMAIN), // $title
             array(&$this, 'markerField'),                // $callback
-            'mifist-slick-plugin',                       // $page ->  add_settings_section
-            'mifist_slick_starter_id'                    // $section ->  add_settings_section
+            'mifist_control_options',                       // $page ->  add_settings_section
+            'mifist_option_starter_id'                    // $section ->  add_settings_section
         );
 	    add_settings_field (
-		    'mifist_slick_check_field_id',              // $id
+		    'mifist_option_check_field_id',              // $id
 		    __('Check', MIFISTAPI_PlUGIN_TEXTDOMAIN), // $title
 		    array(&$this, 'checkField'),                // $callback
-		    'mifist-slick-plugin',                       // $page ->  add_settings_section
-		    'mifist_slick_starter_id'                    // $section ->  add_settings_section
+		    'mifist_control_options',                       // $page ->  add_settings_section
+		    'mifist_option_starter_id'                    // $section ->  add_settings_section
 	    );
 
     }
@@ -102,8 +102,8 @@ class MainAdminOptionsModel implements ICreatorInstance {
         
 	
 	   
-		  //  error_log(3);
-		   // error_log(print_r($input, true));
+		    //error_log(3);
+		    //error_log(print_r($input, true));
 		    return $input;
 		    
 	    

@@ -72,6 +72,14 @@
     font-style: normal;
     font-size: 1rem; }
 
+table.shortcode-table {
+  color: #0f0f0f; }
+  table.shortcode-table thead {
+    color: #777575 !important;
+    text-transform: uppercase; }
+    table.shortcode-table thead td {
+      text-align: center !important; }
+
 .mifist-guest-form {
   background: #62b3a2;
   padding: 20px; }

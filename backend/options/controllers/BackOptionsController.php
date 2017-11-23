@@ -1,14 +1,15 @@
 <?php
-namespace backend\menu\controllers;
+namespace backend\options\controllers;
 use includes\common\NewInstance;
-use backend\menu\models\MainAdminOptionsModel;
+use backend\options\models\BackOptionsModel;
+use backend\menu\controllers\BaseAdminMenuController;
 
-class MainAdminOptionsController extends BaseAdminMenuController {
+class BackOptionsController extends BaseAdminMenuController {
 	use NewInstance;
 	public $model;
 	public function __construct(){
 		parent::__construct();
-		$this->model = MainAdminOptionsModel::newInstance();
+		$this->model = BackOptionsModel::newInstance();
 	}
 
     public function action()
@@ -33,7 +34,7 @@ class MainAdminOptionsController extends BaseAdminMenuController {
 
     public function render() {
         // TODO: Implement render() method.
-	    $pathView = MIFISTAPI_PlUGIN_DIR . '/backend/menu/templates/MainAdminOptions.view.php';
+	    $pathView = MIFISTAPI_PlUGIN_DIR . '/backend/options/templates/BackOptions.view.php';
 	    $this->loadView($pathView);
     }
 	
