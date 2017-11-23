@@ -35,11 +35,11 @@ class GuestBookDashboardWidget implements ICreatorInstance
             'high'
         );
 
-       /* wp_add_dashboard_widget(
+       wp_add_dashboard_widget(
             'mifist_guest_book_dashboard_widget',         // Идентификатор виджета.
             __('Guest book', MIFISTAPI_PlUGIN_TEXTDOMAIN),           // Заголовок виджета.
             array( &$this, 'renderDashboardWidget'  ) // Функция отображения.
-        );*/
+        );
 
         // Объявляем глобальный массив метабоксов, содержащий все виджеты административной понели WordPress
         global $wp_meta_boxes;

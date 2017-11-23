@@ -1,161 +1,62 @@
-#wpbody-content *, #wpbody-content *::before, #wpbody-content *::after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit; }
+#wpbody-content *, #wpbody-content *::before, #wpbody-content *::after { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-#wpbody-content .row {
-  max-width: 112.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: block; }
+#wpbody-content .row { max-width: 112.5rem; margin-left: auto; margin-right: auto; display: block; }
 
-#wpbody-content .row::before, #wpbody-content .row::after {
-  content: ' ';
-  display: table; }
+#wpbody-content .row::before, #wpbody-content .row::after { content: ' '; display: table; }
 
-#wpbody-content .row::after {
-  clear: both; }
+#wpbody-content .row::after { clear: both; }
 
-#wpbody-content .column, #wpbody-content .columns {
-  width: 100%;
-  float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+#wpbody-content .column, #wpbody-content .columns { width: 100%; float: left; padding-left: 0.625rem; padding-right: 0.625rem; }
 
-@media screen and (min-width: 40em) {
-  #wpbody-content .column, #wpbody-content .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; } }
+@media screen and (min-width: 40em) { #wpbody-content .column, #wpbody-content .columns { padding-left: 0.9375rem; padding-right: 0.9375rem; } }
 
-#wpbody-content .small-12 {
-  width: 100%;
-  padding: 0; }
+#wpbody-content .small-12 { width: 100%; padding: 0; }
 
-@media screen and (min-width: 40em) {
-  #wpbody-content .medium-12 {
-    width: 100%;
-    padding: 0; } }
+@media screen and (min-width: 40em) { #wpbody-content .medium-12 { width: 100%; padding: 0; } }
 
-@media screen and (min-width: 64em) {
-  #wpbody-content .large-6 {
-    width: 47%; } }
+@media screen and (min-width: 64em) { #wpbody-content .large-6 { width: 47%; } }
 
-#adminmenu #toplevel_page_mifist-slick-slider-plugin .wp-menu-image img {
-  padding: 4px 0 0 !important;
-  opacity: 1;
-  max-width: 26px !important; }
+#adminmenu #toplevel_page_mifist-slick-slider-plugin .wp-menu-image img { padding: 4px 0 0 !important; opacity: 1; max-width: 26px !important; }
 
-.row a {
-  color: #62b3a2;
-  font-weight: bold;
-  text-decoration: none;
-  -webkit-transition: color .6s;
-  -moz-transition: color .6s;
-  -ms-transition: color .6s;
-  -o-transition: color .6s;
-  transition: color .6s; }
-  .row a:hover {
-    color: #000;
-    text-decoration: underline; }
+.row a { color: #62b3a2; font-weight: bold; text-decoration: none; -webkit-transition: color .6s; -moz-transition: color .6s; -ms-transition: color .6s; -o-transition: color .6s; transition: color .6s; }
 
-.mifist_shortcode {
-  text-align: left;
-  border-left: 15px solid #62b3a2; }
+.row a:hover { color: #000; text-decoration: underline; }
 
-.shortcode-line {
-  margin: 0 15px;
-  border-bottom: 1px solid #62b3a2; }
-  .shortcode-line:last-child {
-    border-bottom: none; }
-  .shortcode-line p {
-    margin-bottom: 0;
-    color: #000;
-    font-style: normal;
-    font-size: 1rem; }
+.mifist_shortcode { text-align: left; border-left: 15px solid #62b3a2; }
 
-.mifist-guest-form {
-  background: #62b3a2;
-  padding: 20px; }
+.shortcode-line { margin: 0 15px; border-bottom: 1px solid #62b3a2; }
 
-.mifist-btn-add {
-  width: 200px;
-  height: 30px;
-  background: #fff;
-  color: #62b3a2;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  border: 2px solid transparent;
-  -webkit-transition-timing-function: background;
-  -o-transition-timing-function: background;
-  transition-timing-function: background;
-  -webkit-transition-duration: boreder;
-  -o-transition-duration: boreder;
-  transition-duration: boreder;
-  -webkit-transition-property: color;
-  -o-transition-property: color;
-  transition-property: color; }
-  .mifist-btn-add:hover {
-    border: 2px solid #fff;
-    background: #62b3a2;
-    color: #fff; }
+.shortcode-line:last-child { border-bottom: none; }
 
-.mifist-plugin h4 {
-  font-size: 2.3rem;
-  line-height: 2.5rem;
-  margin: 0; }
+.shortcode-line p { margin-bottom: 0; color: #000; font-style: normal; font-size: 1rem; }
 
-#adminmenu li#toplevel_page_mifist-api div.wp-menu-image img {
-  width: 25px;
-  height: 25px;
-  padding: 5px 0 0; }
+.mifist-guest-form { background: #62b3a2; padding: 20px; }
 
-.features {
-  padding-left: 25px; }
-  .features li {
-    font-size: 1.5rem;
-    line-height: 1.6rem; }
-    .features li:before {
-      font-size: 1rem;
-      color: #62b3a2;
-      content: "";
-      height: 10px;
-      width: 10px;
-      display: inline-block;
-      background: #62b3a2;
-      margin-right: 10px;
-      margin-bottom: 3px; }
+.mifist-btn-add { width: 200px; height: 30px; background: #fff; color: #62b3a2; text-align: center; display: block; margin: 0 auto; border: 2px solid transparent; -webkit-transition-timing-function: background; -o-transition-timing-function: background; transition-timing-function: background; -webkit-transition-duration: boreder; -o-transition-duration: boreder; transition-duration: boreder; -webkit-transition-property: color; -o-transition-property: color; transition-property: color; }
 
-.mif-admin-title {
-  text-transform: uppercase;
-  font-size: 3rem;
-  line-height: 3.5rem;
-  border-top: 5px solid #62b3a2;
-  display: block;
-  border-bottom: 5px solid #62b3a2;
-  margin: 25px 45px 25px 25px;
-  text-align: center; }
+.mifist-btn-add:hover { border: 2px solid #fff; background: #62b3a2; color: #fff; }
 
-.admin-page--hello {
-  display: block;
-  font-size: 5rem;
-  line-height: 5rem;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 20px auto;
-  color: #62b3a2; }
+/* WIDGETS FOR GB */
+.form-gb-label { font-size: 1rem; margin-bottom: 10px; margin-top: 15px; display: block; font-weight: bold; }
 
-.admin-page--welcome {
-  display: block;
-  font-size: 5rem;
-  line-height: 5rem;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 20px auto;
-  color: #62b3a2;
-  margin-top: 40px; }
+.form-gb-input { display: block; width: 100%; margin-bottom: 15px; padding: 10px 15px; font-size: 1rem; }
 
-table.admin-table {
-  width: 100%; }
+.mifist-plugin h4 { font-size: 2.3rem; line-height: 2.5rem; margin: 0; }
 
-.wp-editor-container textarea.wp-editor-area {
-  width: auto !important; }
+#adminmenu li#toplevel_page_mifist-api div.wp-menu-image img { width: 25px; height: 25px; padding: 5px 0 0; }
+
+.features { padding-left: 25px; }
+
+.features li { font-size: 1.5rem; line-height: 1.6rem; }
+
+.features li:before { font-size: 1rem; color: #62b3a2; content: ""; height: 10px; width: 10px; display: inline-block; background: #62b3a2; margin-right: 10px; margin-bottom: 3px; }
+
+.mif-admin-title { text-transform: uppercase; font-size: 3rem; line-height: 3.5rem; border-top: 5px solid #62b3a2; display: block; border-bottom: 5px solid #62b3a2; margin: 25px 45px 25px 25px; text-align: center; }
+
+.admin-page--hello { display: block; font-size: 5rem; line-height: 5rem; text-transform: uppercase; text-align: center; margin: 20px auto; color: #62b3a2; }
+
+.admin-page--welcome { display: block; font-size: 5rem; line-height: 5rem; text-transform: uppercase; text-align: center; margin: 20px auto; color: #62b3a2; margin-top: 40px; }
+
+table.admin-table { width: 100%; }
+
+.wp-editor-container textarea.wp-editor-area { width: auto !important; }

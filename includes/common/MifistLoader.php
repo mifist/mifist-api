@@ -16,6 +16,9 @@ use backend\guest_book\menu\controllers\GuestBookController;
 // GUEST BOOK
 use frontend\guest_book\shortcodes\controllers\GuestBookShortcodesController;
 use frontend\guest_book\shortcodes\controllers\GuestBookAjaxShortcodesController;
+
+// Sidebars
+use backend\sidebars\SidebarsArea;
 // Widget
 use backend\guest_book\widgets\GuestBookDashboardWidget;
 // Ajax
@@ -89,6 +92,9 @@ class MifistLoader {
 	    
 	    // include default Templates for plugin pages
 	    BackTemplatesController::newInstance();
+	    
+	    // Sidebars
+	    SidebarsArea::newInstance();
 	    
 	    
 	    

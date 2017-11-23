@@ -41,14 +41,14 @@ class GuestBookWidget extends \WP_Widget
 
         $tableId = $this->get_field_id("title");
         $tableName = $this->get_field_name("title");
-        echo '<label for="' . $tableId . '">Title</label><br>';
-        echo '<input id="' . $tableId . '" type="text" name="' .
-            $tableName . '" value="' . $title . '"><br>';
+        echo '<label class="form-gb-label" for="' . $tableId . '">Title</label>';
+        echo '<input class="form-gb-input" id="' . $tableId . '" type="text" name="' .
+            $tableName . '" value="' . $title . '">';
 
         $textId = $this->get_field_id("text");
         $textName = $this->get_field_name("text");
-        echo '<label for="' . $textId . '">Text</label><br>';
-        echo '<textarea id="' . $textId . '" name="' . $textName .
+        echo '<label class="form-gb-label" for="' . $textId . '">Description</label>';
+        echo '<textarea rows="5" class="form-gb-input" id="' . $textId . '" name="' . $textName .
             '">' . $text . '</textarea>';
     }
 

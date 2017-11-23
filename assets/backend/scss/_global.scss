@@ -1,6 +1,6 @@
 #wpbody-content {
   *, *::before, *::after {
-	box-sizing: inherit;
+		box-sizing: border-box;
   }
   .row {
 	max-width: 112.5rem;

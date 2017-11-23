@@ -36,6 +36,8 @@ table.shortcode-table thead { color: #777575 !important; text-transform: upperca
 
 table.shortcode-table thead td { text-align: center !important; }
 
+.plugin-title { font-size: 5rem; }
+
 .mifist-guest-form { background: #62b3a2; padding: 20px; }
 
 .mifist-btn-add { width: 200px; height: 30px; background: #fff; color: #62b3a2; text-align: center; display: block; margin: 0 auto; border: 2px solid transparent; -webkit-transition-timing-function: background; -o-transition-timing-function: background; transition-timing-function: background; -webkit-transition-duration: boreder; -o-transition-duration: boreder; transition-duration: boreder; -webkit-transition-property: color; -o-transition-property: color; transition-property: color; }

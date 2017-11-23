@@ -10,12 +10,12 @@ get_header(); ?>
 			<a class="btn--back fa fa-arrow-circle-left" aria-hidden="true" href="#" onClick="history.back()"></a>
 			<div class="row">
 				
-				<div class="small-12 medium-12 large-4 columns item ">
+				<div class="small-12 medium-12 large-12 columns item ">
 					<div class="item__greeting item--transparent">
-						<h1><?php the_title(); ?></h1>
+						<h1  class="plugin-title"><?php the_title(); ?> </h1>
 					</div>
 				</div>
-				<div class="small-12 medium-12 large-8 columns item ">
+				<div class="small-12 medium-12 large-12 columns item ">
 					<div class="item__contact item--green">
 						
 						<?php get_sidebar(); ?>
@@ -23,10 +23,11 @@ get_header(); ?>
 						<div style="display: inline-block" class="title--black">
 							
 							<?php the_content(); ?>
-							<div class="some">
-							
-							</div>
-							
+						
+						
+						</div>
+						<div class="sidebar-plugin">
+							<?php dynamic_sidebar('sidebar-plugin'); ?>
 						</div>
 					</div>
 				</div>
