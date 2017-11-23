@@ -56,12 +56,12 @@ class BackPagesModel implements ICreatorInstance {
 					'post_author'   => $curent_user_id
 				]);
 				
-				error_log($page_id.' insert');
+				//error_log($page_id.' insert');
 				
 				update_post_meta($page_id, '_wp_page_template', $default_page['page_template']);
 				
 				// SUB PAGES
-				/*if (array_key_exists('sub_pages', $default_page) == true){
+				if (array_key_exists('sub_pages', $default_page) == true){
 					foreach ($default_page['sub_pages'] as $sub_page){
 						$sub_page_id =  wp_insert_post([
 							'post_type'    => 'page',
@@ -73,7 +73,7 @@ class BackPagesModel implements ICreatorInstance {
 						]);
 						update_post_meta($sub_page_id, '_wp_page_template', $sub_page['page_template']);
 					}
-				}*/
+				}
 				
 			}
 		}
@@ -88,9 +88,19 @@ class BackPagesModel implements ICreatorInstance {
 		$templates = self::getTemplates();
 		foreach ($templates as $default_page){
 			$page_title =  get_page_by_title($default_page['post_title']);
-			error_log(print_r($page_title->ID.' deleted default options', true));
+			//error_log(print_r($page_title->ID.' deleted default pages', true));
 			wp_delete_post($page_title->ID, true);
 			delete_post_meta($page_title->ID, '_wp_page_template', $default_page['page_template']);
+			
+			// SUB PAGES
+			if (array_key_exists('sub_pages', $default_page) == true){
+				foreach ($default_page['sub_pages'] as $sub_page){
+					$page_title_sub =  get_page_by_title($sub_page['post_title']);
+					//error_log(print_r($page_title_sub->ID.' deleted default sub pages', true));
+					wp_delete_post($page_title_sub->ID, true);
+					delete_post_meta($page_title_sub->ID, '_wp_page_template', $page_title_sub['page_template']);
+				}
+			}
 		}
 		delete_option( MIFISTAPI_PlUGIN_OPTION_NAME.'_pages');
 	}
