@@ -1,52 +1,4 @@
-#wpbody-content {
-  *, *::before, *::after {
-		box-sizing: border-box;
-  }
-  .row {
-	max-width: 112.5rem;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-  }
-  .row::before, .row::after {
-	content: ' ';
-	display: table;
-  }
-  
-  .row::after {
-	clear: both;
-  }
-  .column, .columns {
-	width: 100%;
-	float: left;
-	padding-left: 0.625rem;
-	padding-right: 0.625rem;
-  }
-  @media screen and (min-width: 40em) {
-	.column, .columns {
-	  padding-left: 0.9375rem;
-	  padding-right: 0.9375rem;
-	}
-  }
-  
-  .small-12 {
-	width: 100%;
-	padding: 0;
-  }
-  @media screen and (min-width: 40em) {
-	.medium-12 {
-	  width: 100%;
-	  padding: 0;
-	}
-  }
-  @media screen and (min-width: 64em) {
-	.large-6 {
-	  width: 47%;
-	}
-  }
-  
-  
-}
+
 #adminmenu #toplevel_page_mifist-slick-slider-plugin {
   .wp-menu-image {
 	img {
@@ -56,20 +8,24 @@
 	}
   }
 }
-
-.row {
-  a {
-	color: $d-green;
-	font-weight: bold;
-	text-decoration: none;
-	-webkit-transition: color .6s;
-	-moz-transition: color .6s;
-	-ms-transition: color .6s;
-	-o-transition: color .6s;
-	transition: color .6s;
-	&:hover {
-	  color: #000;
-	  text-decoration: underline;
+.guest-table {
+	input[type=text], input[type=search], input[type=number], input[type=radio], input[type=tel], input[type=time], input[type=url], input[type=week], input[type=password], input[type=checkbox], input[type=color], input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], select, textarea {
+		border: none;
+		box-shadow: none;
+		outline: none;
+		background: #F1EBEB;
+		width: 100%;
+		display: block;
+		padding: 10px 15px;
+		height: auto;
+		line-height: inherit;
+		border-radius: 0;
+		@include ba-transition(all .3s);
+		&:hover,
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 5px $map-green;
+			border-radius: 0;
+		}
 	}
-  }
 }

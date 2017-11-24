@@ -1,6 +1,7 @@
-$d-green: #62b3a2;
-$d-gray: #eae4e4;
+$map-green: #62b3a2;
+$map-gray: #eae4e4;
 $body: #fdfdfd;
+$white: #fff;
 $f-open: 'Open Sans', sans-serif;
 
 @mixin ba-transition ($property: 'color, border-color, background-color, opacity, transform', $duration: .2s, $timing-func:  ease-in) {
@@ -8,8 +9,12 @@ $f-open: 'Open Sans', sans-serif;
   transition-duration: $duration;
   transition-property: #{$property};
 }
+// Bootstrap
+@import "bootsrap";
+
 // Guest book
 @import "global";
+@import "buttons";
 // Shortcode style
 @import "shortcodes";
 // Guest book
@@ -17,10 +22,4 @@ $f-open: 'Open Sans', sans-serif;
 // Guest book
 @import "admin-menu";
 
-table.admin-table {
-  width: 100%;
-}
-.wp-editor-container textarea.wp-editor-area {
-  width: auto !important;
-}
 

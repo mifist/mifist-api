@@ -29,7 +29,7 @@ class GuestBookModel
                               /*user_category ENUM('дом', 'работа', 'учеба', 'тест', 'проходили мимо') NOT NULL,*/
                               date_add int(11) NOT NULL,
                               user_name varchar(150) NOT NULL,
-                              age TINYINT(2) NOT NULL,
+                              age SMALLINT(2) NOT NULL,
                               user_mail varchar(150) NOT NULL,
                               message text NOT NULL,
                             /*  UNIQUE('user_mail'),*/

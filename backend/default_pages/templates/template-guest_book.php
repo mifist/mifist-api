@@ -21,6 +21,8 @@ get_header(); ?>
 					<?php get_sidebar(); ?>
 					
 					<div style="display: inline-block" class="title--black">
+						<?php echo do_shortcode( '[mifist_guest_book]' ); ?>
+						
 						
 						<?php the_content(); ?>
 						

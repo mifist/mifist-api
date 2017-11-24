@@ -8,6 +8,8 @@ $f-open: 'Open Sans Condensed', sans-serif;
   transition-duration: $duration;
   transition-property: #{$property};
 }
+// Bootstrap
+@import "bootsrap";
 // Guest book
 @import "global";
 // Shortcode style

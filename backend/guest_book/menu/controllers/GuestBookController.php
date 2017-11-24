@@ -55,7 +55,7 @@ class GuestBookController extends BaseAdminMenuController {
 			// admin.php?page=guest_book&action=insert_data
 			case "insert_data":
 				/*
-				 * Проверяем наличие данных от формы GuestBookShortcodesAdd.view.php
+				 * Проверяем наличие данных от формы GuestBookAdd.view.php
 				 */
 				if (isset($_POST)){
 					/*

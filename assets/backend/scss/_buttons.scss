@@ -1,0 +1,25 @@
+.btn {
+	border: 2px solid $map-green;
+	background: $white;
+	color: $map-green;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 5px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 5px 0;
+	@include ba-transition(all .3s);
+	&:hover,
+	&:focus {
+		background: $map-green;
+		color: $white;
+		text-decoration: none;
+		outline: none;
+	}
+}
+.btn-add {
+	padding: 5px 30px;
+	float: right;
+	margin: 10px 0;
+}

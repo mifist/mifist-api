@@ -23,7 +23,7 @@
 	line-height: 1.6rem;
 	&:before {
 	  font-size: 1rem;
-	  color: $d-green;
+	  color: $map-green;
 	  content: "";
 	  height: 10px;
 	  width: 10px;
@@ -38,9 +38,9 @@
   text-transform: uppercase;
   font-size: 3rem;
   line-height: 3.5rem;
-  border-top: 5px solid $d-green;
+  border-top: 5px solid $map-green;
   display: block;
-  border-bottom: 5px solid $d-green;
+  border-bottom: 5px solid $map-green;
   margin: 25px 45px 25px 25px;
   text-align: center;
 }
@@ -52,7 +52,7 @@
 	text-transform: uppercase;
 	text-align: center;
 	margin: 20px auto;
-	color: $d-green;
+	color: $map-green;
   }
   &--welcome {
 	display: block;
@@ -61,7 +61,7 @@
 	text-transform: uppercase;
 	text-align: center;
 	margin: 20px auto;
-	color: $d-green;
+	color: $map-green;
 	margin-top: 40px;
   }
 }

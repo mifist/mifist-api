@@ -1,12 +1,12 @@
 .mifist-guest-form {
-  background: $d-green;
+  background: $map-green;
   padding: 20px;
 }
 .mifist-btn-add {
   width: 200px;
   height: 30px;
   background: #fff;
-  color: $d-green;
+  color: $map-green;
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -14,11 +14,79 @@
   @include ba-transition(color, boreder, background);
   &:hover {
 	border: 2px solid #fff;
-	background: $d-green;
+	background: $map-green;
 	color: #fff;
   }
 }
 // table
+table.admin-table {
+  width: 100%;
+}
+.wp-editor-container textarea.wp-editor-area {
+  width: auto !important;
+}
+
+.admin-table.guest-table,
+.guest-table {
+  margin: 35px 15px 35px 0;
+}
+.add-table,
+.edit-table {
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .table-form {
+    margin-top: 10px;
+  }
+  
+  .table-body {
+    .table-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+}
+.table-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.table-col {
+  padding: 5px;
+}
+.table-header {
+  .table-row {
+    text-transform: uppercase;
+    font-weight: bold;
+    
+  }
+  .table-col {
+    background: $map-green;
+    color: $white;
+    padding: 10px 0;
+  }
+}
+.table-body {
+  .table-row {
+    font-weight: normal;
+    background: $white;
+    
+    &:not(:last-child) {
+      border-bottom: 1px solid $map-gray;
+    }
+  }
+}
+
+.guest-title.empty {
+  text-align: center;
+}
 
 /* WIDGETS FOR GB */
 // Form
